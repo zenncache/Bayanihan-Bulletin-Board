@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bayanihan Board</title>
+<meta name="theme-color" content="#5c3a21">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bayanihan Board">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="180x180" href="data:image/png;base64,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">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+
+    --cork:#9c6a37;
+    --cork-2:#89592c;
+    --speck:rgba(40,20,5,0.14);
+    --speck-light:rgba(255,235,200,0.10);
+    --wood:#5c3a21;
+    --wood-dark:#432810;
+    --wood-text:#f4e6cf;
+    --ink:#3b2a1a;
+    --ink-soft:#6b5642;
+    --surface:#fbf6e9;
+    --surface-edge:#e8dcc0;
+    --note-announce:#cfe8de;
+    --note-announce-edge:#a6cfbf;
+    --note-lost:#f6cec8;
+    --note-lost-edge:#e6a89f;
+    --note-favor:#fbe6a3;
+    --note-favor-edge:#e8c96e;
+    --pin:#b8433b;
+    --pin-shine:#e07d73;
+    --accent:#b8433b;
+    --shadow:rgba(40,24,8,0.35);
+    --font-display:'Caveat', cursive;
+    --font-body:'Nunito', sans-serif;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cork:#4d341c;
+      --cork-2:#402a16;
+      --speck:rgba(0,0,0,0.28);
+      --speck-light:rgba(255,225,180,0.05);
+      --wood:#2c1c0f;
+      --wood-dark:#1c110a;
+      --wood-text:#f1e2c8;
+      --ink:#f1e6d4;
+      --ink-soft:#c9b89e;
+      --surface:#2a2115;
+      --surface-edge:#40331f;
+      --note-announce:#274036;
+      --note-announce-edge:#3a5c4d;
+      --note-lost:#452420;
+      --note-lost-edge:#63332c;
+      --note-favor:#4a3c17;
+      --note-favor-edge:#6b5722;
+      --pin:#e0655b;
+      --pin-shine:#f0a099;
+      --accent:#e0655b;
+      --shadow:rgba(0,0,0,0.55);
+    }
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cork);
+    color:var(--ink);
+    font-family:var(--font-body);
+    min-height:100%;
+  }
+
+  .board-wrap{
+    background-image:
+      radial-gradient(var(--speck) 1px, transparent 1.4px),
+      radial-gradient(var(--speck) 1px, transparent 1.4px),
+      radial-gradient(var(--speck-light) 1px, transparent 1.4px),
+      linear-gradient(180deg, var(--cork), var(--cork-2));
+    background-size:29px 29px, 47px 47px, 23px 23px, 100% 100%;
+    background-position:0 0, 14px 21px, 7px 4px, 0 0;
+    min-height:100vh;
+  }
+
+  header.board-header{
+    position:sticky;
+    top:0;
+    z-index:20;
+    padding:calc(1.1rem + env(safe-area-inset-top,0px)) 1.25rem 1rem;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.08)),
+      repeating-linear-gradient(90deg, var(--wood), var(--wood) 26px, var(--wood-dark) 26px, var(--wood-dark) 28px);
+    box-shadow:0 6px 14px var(--shadow);
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex; flex-direction:column; gap:0.1rem;}
+  .brand h1{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(1.8rem, 5vw, 2.5rem);
+    color:var(--wood-text);
+    margin:0;
+    line-height:1;
+  }
+  .brand p{
+    margin:0;
+    color:var(--wood-text);
+    opacity:0.75;
+    font-size:0.85rem;
+    max-width:46ch;
+  }
+  .header-stat{
+    color:var(--wood-text);
+    font-size:0.8rem;
+    opacity:0.85;
+    text-align:right;
+  }
+
+  main{
+    max-width:1080px;
+    margin:0 auto;
+    padding:1.5rem 1.25rem calc(3rem + env(safe-area-inset-bottom,0px));
+  }
+
+  .toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.75rem;
+    align-items:center;
+    margin-bottom:1.25rem;
+  }
+  .pin-btn{
+    font-family:var(--font-body);
+    font-weight:800;
+    font-size:0.95rem;
+    color:var(--surface);
+    background:var(--accent);
+    border:none;
+    border-radius:8px;
+    padding:0.7rem 1.1rem;
+    cursor:pointer;
+    box-shadow:0 3px 0 rgba(0,0,0,0.22), 0 4px 10px var(--shadow);
+    transition:transform 0.12s ease;
+  }
+  .pin-btn:hover{transform:translateY(-1px);}
+  .pin-btn:active{transform:translateY(1px); box-shadow:0 1px 0 rgba(0,0,0,0.22);}
+
+  .search-input{
+    flex:1 1 180px;
+    min-width:140px;
+    font-family:var(--font-body);
+    font-size:0.9rem;
+    padding:0.65rem 0.9rem;
+    border-radius:8px;
+    border:1px solid var(--surface-edge);
+    background:var(--surface);
+    color:var(--ink);
+  }
+  .search-input:focus-visible, button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible{
+    outline:3px solid var(--pin-shine);
+    outline-offset:2px;
+  }
+
+  .filters{
+    display:flex;
+    gap:0.5rem;
+    flex-wrap:wrap;
+    width:100%;
+  }
+  .filter-chip{
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:0.8rem;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--surface-edge);
+    border-radius:999px;
+    padding:0.4rem 0.85rem;
+    cursor:pointer;
+    opacity:0.75;
+  }
+  .filter-chip[aria-pressed="true"]{
+    opacity:1;
+    background:var(--accent);
+    color:var(--surface);
+    border-color:transparent;
+  }
+
+  .board{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+    gap:1.6rem 1.4rem;
+    padding-top:0.5rem;
+  }
+
+  .note{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--surface-edge);
+    border-radius:3px;
+    padding:1.4rem 1.1rem 1rem;
+    box-shadow:0 10px 18px var(--shadow);
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    gap:0.4rem;
+  }
+  .note::before{
+    content:"";
+    position:absolute;
+    top:-11px;
+    left:50%;
+    transform:translateX(-50%);
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--pin-shine), var(--pin) 60%);
+    box-shadow:0 3px 4px var(--shadow);
+  }
+  .note[data-cat="announce"]{background:var(--note-announce); border-color:var(--note-announce-edge);}
+  .note[data-cat="lost"]{background:var(--note-lost); border-color:var(--note-lost-edge);}
+  .note[data-cat="favor"]{background:var(--note-favor); border-color:var(--note-favor-edge);}
+
+  .note-tag{
+    align-self:flex-start;
+    font-size:0.68rem;
+    font-weight:800;
+    letter-spacing:0.02em;
+    padding:0.15rem 0.55rem;
+    border-radius:999px;
+    background:rgba(0,0,0,0.08);
+    color:var(--ink-soft);
+  }
+  .note h3{
+    font-family:var(--font-display);
+    font-size:1.5rem;
+    line-height:1.05;
+    margin:0.15rem 0 0;
+    color:var(--ink);
+    word-break:break-word;
+  }
+  .note p.msg{
+    font-size:0.88rem;
+    line-height:1.4;
+    color:var(--ink);
+    margin:0;
+    white-space:pre-wrap;
+    word-break:break-word;
+    flex:1;
+  }
+  .note .meta{
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    margin-top:0.3rem;
+    line-height:1.4;
+  }
+  .note .actions{
+    display:flex;
+    gap:0.4rem;
+    margin-top:0.5rem;
+  }
+  .note .actions button{
+    font-family:var(--font-body);
+    font-size:0.72rem;
+    font-weight:700;
+    border:1px solid rgba(0,0,0,0.15);
+    background:rgba(255,255,255,0.5);
+    color:var(--ink);
+    border-radius:6px;
+    padding:0.3rem 0.55rem;
+    cursor:pointer;
+  }
+  .note.resolved{opacity:0.6;}
+  .stamp{
+    position:absolute;
+    top:38%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(-12deg);
+    border:3px solid var(--pin);
+    color:var(--pin);
+    font-family:var(--font-body);
+    font-weight:800;
+    letter-spacing:0.08em;
+    font-size:0.95rem;
+    padding:0.15rem 0.6rem;
+    border-radius:6px;
+    opacity:0.8;
+    pointer-events:none;
+  }
+
+  .empty-state{
+    grid-column:1/-1;
+    text-align:center;
+    color:var(--wood-text);
+    opacity:0.85;
+    padding:3rem 1rem;
+    font-size:0.95rem;
+  }
+  .empty-state .pin-emoji{font-size:2rem; display:block; margin-bottom:0.5rem;}
+
+  footer{
+    text-align:center;
+    color:var(--wood-text);
+    opacity:0.7;
+    font-size:0.75rem;
+    padding:1rem 1rem calc(1rem + env(safe-area-inset-bottom,0px));
+  }
+  footer button{
+    background:none;
+    border:none;
+    color:var(--wood-text);
+    text-decoration:underline;
+    cursor:pointer;
+    font-size:0.75rem;
+    padding:0;
+  }
+
+  .composer-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,12,4,0.55);
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:calc(2rem + env(safe-area-inset-top,0px)) 1rem 2rem;
+    overflow-y:auto;
+    z-index:50;
+  }
+  .composer-overlay.hidden{display:none;}
+  .composer{
+    background:var(--surface);
+    border-radius:6px;
+    width:min(440px, 100%);
+    padding:1.4rem 1.3rem 1.3rem;
+    box-shadow:0 20px 40px rgba(0,0,0,0.45);
+    position:relative;
+  }
+  .composer::before{
+    content:"";
+    position:absolute;
+    top:-11px;
+    left:50%;
+    transform:translateX(-50%);
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--pin-shine), var(--pin) 60%);
+    box-shadow:0 3px 4px rgba(0,0,0,0.4);
+  }
+  .composer h2{
+    font-family:var(--font-display);
+    font-size:1.7rem;
+    margin:0.2rem 0 0.8rem;
+    color:var(--ink);
+  }
+  .composer label{
+    display:block;
+    font-size:0.75rem;
+    font-weight:700;
+    color:var(--ink-soft);
+    margin:0.7rem 0 0.25rem;
+  }
+  .composer input[type=text], .composer textarea{
+    width:100%;
+    font-family:var(--font-body);
+    font-size:0.9rem;
+    padding:0.6rem 0.7rem;
+    border-radius:6px;
+    border:1px solid var(--surface-edge);
+    background:#fff;
+    color:var(--ink);
+    resize:vertical;
+  }
+  .composer textarea{min-height:90px;}
+  .cat-toggle{display:flex; gap:0.5rem; flex-wrap:wrap;}
+  .cat-toggle button{
+    flex:1 1 auto;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:0.78rem;
+    padding:0.5rem 0.6rem;
+    border-radius:6px;
+    border:1px solid var(--surface-edge);
+    background:#fff;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  .cat-toggle button[aria-pressed="true"][data-cat="announce"]{background:var(--note-announce); border-color:var(--note-announce-edge);}
+  .cat-toggle button[aria-pressed="true"][data-cat="lost"]{background:var(--note-lost); border-color:var(--note-lost-edge);}
+  .cat-toggle button[aria-pressed="true"][data-cat="favor"]{background:var(--note-favor); border-color:var(--note-favor-edge);}
+  .composer-row{display:flex; gap:0.6rem;}
+  .composer-row > div{flex:1;}
+  .composer-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:0.6rem;
+    margin-top:1.2rem;
+  }
+  .btn-ghost{
+    background:none;
+    border:1px solid var(--surface-edge);
+    color:var(--ink-soft);
+    border-radius:6px;
+    padding:0.55rem 1rem;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:0.85rem;
+    cursor:pointer;
+  }
+  .btn-primary{
+    background:var(--accent);
+    border:none;
+    color:var(--surface);
+    border-radius:6px;
+    padding:0.55rem 1.1rem;
+    font-family:var(--font-body);
+    font-weight:800;
+    font-size:0.85rem;
+    cursor:pointer;
+  }
+  .field-error{color:var(--pin); font-size:0.75rem; margin-top:0.3rem; display:none;}
+
+  @media (max-width:480px){
+    .board{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:360px){
+    .board{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="board-wrap">
+  <header class="board-header">
+    <div class="brand">
+      <h1>📌 Bayanihan Board</h1>
+      <p>A shared noticeboard for announcements, lost &amp; found, and neighbors helping neighbors — sana&nbsp;maka‑tulong.</p>
+    </div>
+    <div class="header-stat" id="headerStat"></div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <button class="pin-btn" id="openComposer" type="button">+ Pin a note</button>
+      <input class="search-input" id="searchInput" type="text" placeholder="Search notes…" aria-label="Search notes">
+      <div class="filters" role="tablist" aria-label="Filter by category">
+        <button class="filter-chip" data-filter="all" aria-pressed="true" type="button">All</button>
+        <button class="filter-chip" data-filter="announce" aria-pressed="false" type="button">Announcements</button>
+        <button class="filter-chip" data-filter="lost" aria-pressed="false" type="button">Lost &amp; Found</button>
+        <button class="filter-chip" data-filter="favor" aria-pressed="false" type="button">Favors &amp; Requests</button>
+      </div>
+    </div>
+
+    <section class="board" id="board" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    Notes are saved only in this browser, on this device — a real deployment would sync them for everyone.
+    <button id="resetBoard" type="button">Restore sample notes</button>
+  </footer>
+</div>
+
+<div class="composer-overlay hidden" id="composerOverlay">
+  <form class="composer" id="composerForm" novalidate>
+    <h2>Pin a new note</h2>
+
+    <label id="catLabel">Category</label>
+    <div class="cat-toggle" role="group" aria-labelledby="catLabel">
+      <button type="button" data-cat="announce" aria-pressed="true">📣 Announcement</button>
+      <button type="button" data-cat="lost" aria-pressed="false">🔍 Lost &amp; Found</button>
+      <button type="button" data-cat="favor" aria-pressed="false">🤝 Favor</button>
+    </div>
+
+    <label for="noteTitle">Title</label>
+    <input type="text" id="noteTitle" maxlength="60" placeholder="e.g. Brownout this Saturday" required>
+    <div class="field-error" id="titleError">Please add a short title.</div>
+
+    <label for="noteMsg">Message</label>
+    <textarea id="noteMsg" maxlength="400" placeholder="Add the details neighbors need to know…" required></textarea>
+    <div class="field-error" id="msgError">Please add a message.</div>
+
+    <div class="composer-row">
+      <div>
+        <label for="noteName">Your name (optional)</label>
+        <input type="text" id="noteName" maxlength="40" placeholder="Aling Nena">
+      </div>
+      <div>
+        <label for="noteContact">Contact (optional)</label>
+        <input type="text" id="noteContact" maxlength="40" placeholder="0917…">
+      </div>
+    </div>
+
+    <div class="composer-actions">
+      <button type="button" class="btn-ghost" id="cancelComposer">Cancel</button>
+      <button type="submit" class="btn-primary">Pin it to the board</button>
+    </div>
+  </form>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var STORAGE_KEY = "bayanihan-board-notes-v1";
+  var SEEDED_KEY = "bayanihan-board-seeded-v1";
+
+  var CAT_LABELS = { announce:"Announcement", lost:"Lost & Found", favor:"Favor / Request" };
+  var RESOLVABLE = { lost:true, favor:true };
+  var RESOLVE_LABEL = { lost:"Found!", favor:"Done!" };
+
+  var sampleNotes = [
+    { id:"s1", cat:"announce", title:"Basketball court repainting", msg:"The covered court will be closed this weekend for repainting. Games move to the open lot beside the chapel.", name:"Barangay Office", contact:"", resolved:false, date:daysAgo(1) },
+    { id:"s2", cat:"lost", title:"Lost: gray house cat", msg:"Answers to \"Mingming\". Last seen near the sari-sari store on Mabini St. Please call if spotted!", name:"Rico", contact:"0917-555-0142", resolved:false, date:daysAgo(2) },
+    { id:"s3", cat:"favor", title:"Need help moving a sofa", msg:"Moving out this Sunday morning and could use 2 extra pairs of hands for about an hour. Merienda on me!", name:"Cel", contact:"0928-555-0110", resolved:false, date:daysAgo(0) },
+    { id:"s4", cat:"announce", title:"Free vaccination drive", msg:"Free flu shots at the health center, Mon–Fri, 8am–3pm. Bring your barangay ID.", name:"Health Center", contact:"", resolved:false, date:daysAgo(4) },
+    { id:"s5", cat:"favor", title:"Tutor needed for Grade 6 Math", msg:"Looking for anyone who can tutor my son twice a week, afternoons. Happy to pay a small rate.", name:"Mrs. Santos", contact:"", resolved:true, date:daysAgo(6) }
+  ];
+
+  function daysAgo(n){
+    var d = new Date();
+    d.setDate(d.getDate() - n);
+    return d.toISOString();
+  }
+
+  function uid(){
+    return "n" + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+  }
+
+  function loadNotes(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(raw){ return JSON.parse(raw); }
+    }catch(e){ /* storage unavailable — fall through to seed data */ }
+    return null;
+  }
+
+  function saveNotes(notes){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(notes)); }catch(e){ /* ignore */ }
+  }
+
+  function markSeeded(){
+    try{ localStorage.setItem(SEEDED_KEY, "1"); }catch(e){ /* ignore */ }
+  }
+
+  var notes = loadNotes();
+  if(!notes){
+    notes = sampleNotes.slice();
+    saveNotes(notes);
+    markSeeded();
+  }
+
+  var state = { filter:"all", query:"" };
+
+  var boardEl = document.getElementById("board");
+  var headerStat = document.getElementById("headerStat");
+  var searchInput = document.getElementById("searchInput");
+  var filterChips = document.querySelectorAll(".filter-chip");
+  var composerOverlay = document.getElementById("composerOverlay");
+  var composerForm = document.getElementById("composerForm");
+  var catToggleBtns = document.querySelectorAll(".cat-toggle button");
+  var selectedCat = "announce";
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
+    });
+  }
+
+  function timeAgo(iso){
+    var diff = Date.now() - new Date(iso).getTime();
+    var mins = Math.round(diff/60000);
+    if(mins < 1) return "just now";
+    if(mins < 60) return mins + "m ago";
+    var hrs = Math.round(mins/60);
+    if(hrs < 24) return hrs + "h ago";
+    var days = Math.round(hrs/24);
+    if(days === 1) return "yesterday";
+    if(days < 7) return days + "d ago";
+    return new Date(iso).toLocaleDateString();
+  }
+
+  function rotationFor(id){
+    var hash = 0;
+    for(var i=0;i<id.length;i++){ hash = (hash * 31 + id.charCodeAt(i)) % 1000; }
+    return ((hash % 60) / 10) - 3;
+  }
+
+  function render(){
+    var q = state.query.trim().toLowerCase();
+    var visible = notes.filter(function(n){
+      if(state.filter !== "all" && n.cat !== state.filter) return false;
+      if(q && (n.title + " " + n.msg + " " + (n.name||"")).toLowerCase().indexOf(q) === -1) return false;
+      return true;
+    });
+    visible.sort(function(a,b){
+      if(!!a.resolved !== !!b.resolved) return a.resolved ? 1 : -1;
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    boardEl.innerHTML = "";
+    headerStat.textContent = notes.length + (notes.length === 1 ? " note pinned" : " notes pinned");
+
+    if(visible.length === 0){
+      var empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.innerHTML = '<span class="pin-emoji">📌</span>' + (q || state.filter !== "all" ? "No notes match — try a different search or category." : "The board is empty. Be the first to pin a note!");
+      boardEl.appendChild(empty);
+      return;
+    }
+
+    visible.forEach(function(n){
+      var card = document.createElement("article");
+      card.className = "note" + (n.resolved ? " resolved" : "");
+      card.dataset.cat = n.cat;
+      card.style.transform = "rotate(" + rotationFor(n.id) + "deg)";
+
+      var actions = "";
+      if(RESOLVABLE[n.cat]){
+        actions += '<button type="button" data-action="resolve" data-id="' + n.id + '">' +
+          (n.resolved ? "Reopen" : "Mark " + RESOLVE_LABEL[n.cat]) + "</button>";
+      }
+      actions += '<button type="button" data-action="delete" data-id="' + n.id + '">Remove</button>';
+
+      var contactLine = "";
+      if(n.name || n.contact){
+        contactLine = escapeHtml(n.name || "Anonymous") + (n.contact ? " · " + escapeHtml(n.contact) : "");
+      } else {
+        contactLine = "Anonymous";
+      }
+
+      card.innerHTML =
+        (n.resolved ? '<div class="stamp">' + escapeHtml(RESOLVE_LABEL[n.cat] || "DONE") + '</div>' : "") +
+        '<span class="note-tag">' + CAT_LABELS[n.cat] + '</span>' +
+        '<h3>' + escapeHtml(n.title) + '</h3>' +
+        '<p class="msg">' + escapeHtml(n.msg) + '</p>' +
+        '<div class="meta">' + contactLine + ' · ' + timeAgo(n.date) + '</div>' +
+        '<div class="actions">' + actions + '</div>';
+
+      boardEl.appendChild(card);
+    });
+  }
+
+  boardEl.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-action]");
+    if(!btn) return;
+    var id = btn.dataset.id;
+    var note = notes.find(function(n){ return n.id === id; });
+    if(!note) return;
+
+    if(btn.dataset.action === "resolve"){
+      note.resolved = !note.resolved;
+      saveNotes(notes);
+      render();
+    } else if(btn.dataset.action === "delete"){
+      if(confirm('Remove "' + note.title + '" from the board?')){
+        notes = notes.filter(function(n){ return n.id !== id; });
+        saveNotes(notes);
+        render();
+      }
+    }
+  });
+
+  filterChips.forEach(function(chip){
+    chip.addEventListener("click", function(){
+      filterChips.forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+      chip.setAttribute("aria-pressed","true");
+      state.filter = chip.dataset.filter;
+      render();
+    });
+  });
+
+  searchInput.addEventListener("input", function(){
+    state.query = searchInput.value;
+    render();
+  });
+
+  document.getElementById("resetBoard").addEventListener("click", function(){
+    if(confirm("Replace the current board with the sample notes? This removes notes you've added.")){
+      notes = sampleNotes.slice();
+      saveNotes(notes);
+      render();
+    }
+  });
+
+  function openComposer(){
+    composerOverlay.classList.remove("hidden");
+    document.getElementById("noteTitle").focus();
+  }
+  function closeComposer(){
+    composerOverlay.classList.add("hidden");
+    composerForm.reset();
+    catToggleBtns.forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.cat === "announce" ? "true":"false"); });
+    selectedCat = "announce";
+    document.getElementById("titleError").style.display = "none";
+    document.getElementById("msgError").style.display = "none";
+  }
+
+  document.getElementById("openComposer").addEventListener("click", openComposer);
+  document.getElementById("cancelComposer").addEventListener("click", closeComposer);
+  composerOverlay.addEventListener("click", function(e){
+    if(e.target === composerOverlay) closeComposer();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && !composerOverlay.classList.contains("hidden")) closeComposer();
+  });
+
+  catToggleBtns.forEach(function(b){
+    b.addEventListener("click", function(){
+      catToggleBtns.forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+      selectedCat = b.dataset.cat;
+    });
+  });
+
+  composerForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var title = document.getElementById("noteTitle").value.trim();
+    var msg = document.getElementById("noteMsg").value.trim();
+    var name = document.getElementById("noteName").value.trim();
+    var contact = document.getElementById("noteContact").value.trim();
+
+    var ok = true;
+    if(!title){ document.getElementById("titleError").style.display = "block"; ok = false; }
+    else { document.getElementById("titleError").style.display = "none"; }
+    if(!msg){ document.getElementById("msgError").style.display = "block"; ok = false; }
+    else { document.getElementById("msgError").style.display = "none"; }
+    if(!ok) return;
+
+    notes.unshift({
+      id: uid(),
+      cat: selectedCat,
+      title: title,
+      msg: msg,
+      name: name,
+      contact: contact,
+      resolved: false,
+      date: new Date().toISOString()
+    });
+    saveNotes(notes);
+    closeComposer();
+    state.filter = "all";
+    filterChips.forEach(function(c){ c.setAttribute("aria-pressed", c.dataset.filter === "all" ? "true":"false"); });
+    render();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
